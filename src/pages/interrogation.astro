@@ -1,0 +1,15 @@
+---
+import TextAlone from "~/components/text-alone.astro";
+import MainLayout from "~/layouts/main-layout.astro";
+import { Content as IntroMd } from "../markdowns/interrogation.md";
+---
+
+<MainLayout>
+    <TextAlone
+        nextHref="/occasion"
+        prevHref="/everydayness"
+        pageName="interrogation"
+        title="Допрос"
+        description="Где Фафнир сомневается в девушке"><IntroMd /></TextAlone
+    >
+</MainLayout>

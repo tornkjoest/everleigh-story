@@ -1,0 +1,15 @@
+---
+import TextAlone from "~/components/text-alone.astro";
+import MainLayout from "~/layouts/main-layout.astro";
+import { Content as IntroMd } from "../markdowns/routine.md";
+---
+
+<MainLayout>
+    <TextAlone
+        nextHref="/betrayal"
+        prevHref="/occasion"
+        pageName="routine"
+        title="Рутина"
+        description="Где стены давят"><IntroMd /></TextAlone
+    >
+</MainLayout>

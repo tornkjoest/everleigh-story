@@ -1,0 +1,19 @@
+---
+import SideBySide from "~/components/side-by-side.astro";
+import MainLayout from "~/layouts/main-layout.astro";
+import { Content as IntroMd } from "../markdowns/occasion.md";
+import occasionImage from "~/assets/occasion.png";
+---
+
+<MainLayout>
+    <SideBySide
+        nextHref="/routine"
+        prevHref="/interrogation"
+        pageName="occasion"
+        imageUrl={occasionImage}
+        hoverImageUrl={null}
+        picPlacement="right"
+        title="Праздник"
+        description="Где Эверли прекрасна"><IntroMd /></SideBySide
+    >
+</MainLayout>

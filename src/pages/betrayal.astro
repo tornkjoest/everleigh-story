@@ -1,0 +1,19 @@
+---
+import SideBySide from "~/components/side-by-side.astro";
+import MainLayout from "~/layouts/main-layout.astro";
+import { Content as IntroMd } from "../markdowns/betrayal.md";
+import tornImage from "~/assets/torn.png";
+---
+
+<MainLayout>
+    <SideBySide
+        nextHref="/problems"
+        prevHref="/routine"
+        pageName="betrayal"
+        imageUrl={tornImage}
+        hoverImageUrl={null}
+        picPlacement="left"
+        title="Предательство"
+        description="Где ещё есть надежда"><IntroMd /></SideBySide
+    >
+</MainLayout>

@@ -1,0 +1,21 @@
+---
+import SideBySide from "~/components/side-by-side.astro";
+import MainLayout from "~/layouts/main-layout.astro";
+import { Content as IntroMd } from "../markdowns/intro.md";
+import singingImage from "~/assets/singing_v2.png";
+import portraitImage from "~/assets/portrait_small.png";
+---
+
+<MainLayout>
+    <SideBySide
+        nextHref="/beginning"
+        prevHref="/"
+        pageName="prologue"
+        imageUrl={singingImage}
+        hoverImageUrl={portraitImage}
+        picPlacement="left"
+        title="Пролог"
+        description="Где читатель знакомится с замечательной Эверли"
+        ><IntroMd /></SideBySide
+    >
+</MainLayout>

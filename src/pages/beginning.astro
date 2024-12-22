@@ -1,0 +1,19 @@
+---
+import SideBySide from "~/components/side-by-side.astro";
+import MainLayout from "~/layouts/main-layout.astro";
+import { Content as IntroMd } from "../markdowns/beginning.md";
+import tavernImage from "~/assets/tavern.png";
+---
+
+<MainLayout>
+    <SideBySide
+        nextHref="/everydayness"
+        prevHref="/prologue"
+        pageName="beginning"
+        imageUrl={tavernImage}
+        hoverImageUrl={null}
+        picPlacement="right"
+        title="Начало"
+        description="Где Эверли находит своё призвание"><IntroMd /></SideBySide
+    >
+</MainLayout>

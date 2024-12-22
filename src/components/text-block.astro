@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "~/layouts/main-layout.astro";
+import Prose from "../components/prose.astro";
+import SideImage from "./side-image.astro";
+
+const { prevHref = "#", nextHref = "#", pageName = "#" } = Astro.props;
+
+const isNextHrefEmpty = nextHref.trim() === "";
+---
+
+<div
+    class="adaptive-nested-overflow flex w-full flex-col justify-between p-8 md:w-1/2"
+>
+    <Prose>
+        <div class="mb-8 flex-grow overflow-y-auto pr-6">
+            <slot />
+        </div>
+        <div class="flex justify-between">
+            <a href={prevHref} class="non-accented-btn"> Назад </a>
+            <a
+                href={nextHref}
+                class={`accented-btn ${isNextHrefEmpty ? "hidden" : ""}`}
+                id={"next-story-element-" + pageName}
+            >
+                Дальше
+            </a>
+        </div>
+    </Prose>
+</div>
+
+<style>
+    @media (max-aspect-ratio: 1/1) {
+        .overflow-y-auto {
+            max-height: none;
+            overflow-y: visible;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>

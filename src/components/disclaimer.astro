@@ -1,0 +1,86 @@
+---
+import Prose from "./prose.astro";
+const { pathname } = Astro.url;
+---
+
+<style>
+    .disclaimer-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    .disclaimer-content {
+        text-align: center;
+        padding: 2rem;
+        background-color: #000000;
+        border-radius: 10px;
+        color: var(--color-text);
+        border: solid 1px;
+        border-color: var(--color-text);
+    }
+</style>
+
+<div class="disclaimer-overlay" id={"mature-content-disclaimer-" + pathname}>
+    <div class="disclaimer-content">
+        <h2 class="mb-6">Внимание!</h2>
+        <Prose>
+            <p>
+                Этот материал является произведением фантазии и содержит
+                элементы, которые могут быть тревожными или беспокоящими для
+                некоторых зрителей. Все события, персонажи и ситуации в этом
+                произведении являются вымышленными и не имеют намерения поощрять
+                или побуждать к подобным действиям в реальной жизни.
+            </p>
+            <p>
+                Просмотр или чтение данного материала осуществляется на ваш
+                страх и риск. Если вы чувствуете, что содержание может вызвать у
+                вас дискомфорт, пожалуйста, примите решение в пользу вашего
+                эмоционального благополучия.
+            </p>
+        </Prose>
+        <button id={"proceed-btn-" + pathname} class="accented-btn mr-6 mt-6"
+            >Мне есть 18</button
+        >
+        <button id={"leave-btn-" + pathname} class="non-accented-btn ml-6"
+            >Покинуть</button
+        >
+    </div>
+</div>
+
+<script is:inline define:vars={{ pathname }}>
+    document.addEventListener("astro:page-load", () => {
+        let disclaimer = document.getElementById(
+            "mature-content-disclaimer-" + pathname,
+        );
+        let proceedBtn = document.getElementById("proceed-btn-" + pathname);
+        let leaveBtn = document.getElementById("leave-btn-" + pathname);
+
+        if (!disclaimer || !proceedBtn || !leaveBtn) {
+            return;
+        }
+
+        console.log(proceedBtn);
+
+        // Check if the user has already agreed
+        if (sessionStorage.getItem("matureContentAgreed") !== "true") {
+            disclaimer.style.display = "flex";
+        }
+
+        proceedBtn.addEventListener("click", () => {
+            sessionStorage.setItem("matureContentAgreed", "true");
+            disclaimer.style.display = "none";
+        });
+
+        leaveBtn.addEventListener("click", () => {
+            window.location.href = "https://www.google.com";
+        });
+    });
+</script>

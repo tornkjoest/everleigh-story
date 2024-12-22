@@ -1,0 +1,31 @@
+---
+import "@fontsource-variable/inter";
+import "~/styles/index.css";
+import { fade } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
+import Disclaimer from "~/components/disclaimer.astro";
+---
+
+<!doctype html>
+<html
+    lang="en"
+    class="h-full motion-safe:scroll-smooth"
+    data-theme="dark"
+    transition:animate={fade({ duration: "0.5s" })}
+>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+        <title>Everleigh story</title>
+
+        <ClientRouter />
+    </head>
+    <body
+        class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    >
+        <!-- <Disclaimer /> -->
+        <slot />
+    </body>
+</html>

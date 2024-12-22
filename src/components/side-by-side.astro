@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "~/layouts/main-layout.astro";
+import Prose from "../components/prose.astro";
+import SideImage from "./side-image.astro";
+import TextBlock from "./text-block.astro";
+
+const {
+    pageName = "#",
+    imageUrl = null,
+    prevHref = "#",
+    nextHref = "#",
+    hoverImageUrl = null,
+    picPlacement = "left",
+    title = "Default Title",
+    description = "Default description",
+} = Astro.props;
+---
+
+<MainLayout>
+    <section
+        class={`flex h-screen flex-col md:flex-row ${picPlacement !== "left" ? "md:flex-row-reverse" : ""}`}
+    >
+        <SideImage
+            pageName={pageName}
+            imageUrl={imageUrl}
+            title={title}
+            hoverImageUrl={hoverImageUrl}
+            description={description}
+        />
+
+        <TextBlock pageName={pageName} prevHref={prevHref} nextHref={nextHref}
+            ><slot />
+        </TextBlock>
+    </section>
+    <style>
+        section {
+            min-height: 100vh;
+        }
+    </style>
+</MainLayout>

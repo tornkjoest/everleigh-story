@@ -1,0 +1,16 @@
+[data-theme="dark"] {
+  --color-primary: theme("colors.red.600");
+  /* A bold, deep red for a dramatic effect */
+  --color-secondary: theme("colors.purple.700");
+  /* A rich purple to enhance the mystical vibe */
+  --color-text: theme("colors.yellow.100");
+  /* Soft yellow for a warm, yet slightly eerie text color */
+  --color-text-offset: theme("colors.orange.500");
+  /* Orange for a retro feel */
+  --color-background: theme("colors.black");
+  /* Use black as a base for adding noise */
+  --color-background-offset: theme("colors.gray.800");
+  /* Slightly lighter black for some element separation */
+  --color-border: theme("colors.red.800" / 30%);
+  /* Dark red borders for a stronger contrast */
+}

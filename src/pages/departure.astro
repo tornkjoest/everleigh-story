@@ -1,0 +1,16 @@
+---
+import TextAlone from "~/components/text-alone.astro";
+import MainLayout from "~/layouts/main-layout.astro";
+import { Content as IntroMd } from "../markdowns/departure.md";
+---
+
+<MainLayout>
+    <TextAlone
+        nextHref=""
+        prevHref="thoughts"
+        pageName="departure"
+        title="На Рейхен"
+        description="Где Эверли замечает своего единственного друга"
+        ><IntroMd /></TextAlone
+    >
+</MainLayout>

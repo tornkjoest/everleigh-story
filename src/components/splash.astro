@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import fullHDSplash from "~/assets/fullhd_splash.png";
+---
+
+<section class="adaptive-nested-overflow relative h-full bg-black">
+  <Image
+    src={fullHDSplash}
+    class="absolute right-0 top-0 h-full w-full object-cover"
+    style="image-rendering: pixelated; object-position: top right bottom"
+    alt="Background Image"
+  />
+  <div class="relative grid h-full place-items-center sm:grid-cols-2">
+    <h2
+      class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+    >
+      <div
+        class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-8xl"
+      >
+        Эверли
+      </div>
+
+      <p class="text-center italic text-sm md:text-base">
+        «В девушку за барной стойкой<br />
+        не влюбляйся никогда»
+      </p>
+
+      <a href="/prologue" class="non-accented-btn"> Начать </a>
+    </h2>
+  </div>
+</section>
+
+<style>
+  @media (max-aspect-ratio: 1/1) {
+    /* Styles for when the viewport is taller than it is wide */
+    .object-cover {
+      object-position: 75% !important;
+    }
+  }
+</style>

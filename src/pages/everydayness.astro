@@ -1,0 +1,19 @@
+---
+import SideBySide from "~/components/side-by-side.astro";
+import MainLayout from "~/layouts/main-layout.astro";
+import { Content as IntroMd } from "../markdowns/everydayness.md";
+import pierImage from "~/assets/pier.png";
+---
+
+<MainLayout>
+    <SideBySide
+        nextHref="/interrogation"
+        prevHref="/beginning"
+        pageName="everydayness"
+        imageUrl={pierImage}
+        hoverImageUrl={null}
+        picPlacement="left"
+        title="Размеренность"
+        description="Где Эверли подвластно всё"><IntroMd /></SideBySide
+    >
+</MainLayout>

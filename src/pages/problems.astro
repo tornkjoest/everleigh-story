@@ -1,0 +1,20 @@
+---
+import SideBySide from "~/components/side-by-side.astro";
+import MainLayout from "~/layouts/main-layout.astro";
+import { Content as IntroMd } from "../markdowns/problems.md";
+import attackImage from "~/assets/attack.png";
+---
+
+<MainLayout>
+    <SideBySide
+        nextHref="/thoughts"
+        prevHref="/betrayal"
+        pageName="problems"
+        imageUrl={attackImage}
+        hoverImageUrl={null}
+        picPlacement="right"
+        title="Проблемы"
+        description="Где Эверли понимает, что доигралась"
+        ><IntroMd /></SideBySide
+    >
+</MainLayout>
