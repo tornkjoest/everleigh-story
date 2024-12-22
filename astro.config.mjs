@@ -4,5 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://tornkjoest.github.io",
+  base: "everleigh-story",
   integrations: [tailwind(), icon()],
 });
