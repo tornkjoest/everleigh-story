@@ -1,7 +1,7 @@
 [data-theme="dark"] {
   --color-primary: theme("colors.red.600");
   /* A bold, deep red for a dramatic effect */
-  --color-secondary: theme("colors.purple.700");
+  --color-secondary: #d92929;
   /* A rich purple to enhance the mystical vibe */
   --color-text: theme("colors.yellow.100");
   /* Soft yellow for a warm, yet slightly eerie text color */
